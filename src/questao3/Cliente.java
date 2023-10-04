@@ -15,6 +15,10 @@ public class Cliente {
         this.cidade = cidade;
     }
 
+    public Cliente() {
+    }
+    
+
     public int getId() {
         return id;
     }
@@ -45,6 +49,11 @@ public class Cliente {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente:" + "id: " + id + ", nome: " + nome + ", email: " + email + ", cidade: " + cidade + "";
     }
     
     
