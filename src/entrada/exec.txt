@@ -1,2 +1,4 @@
 inserir;1273;kenney;kenney@hotmail.com;Sao Luis
+inserir;1203;rodrigues;rodrigues@outlook.com;Belem
+buscar;1273
 

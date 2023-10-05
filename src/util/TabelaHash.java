@@ -10,6 +10,10 @@ public class TabelaHash {
         return tamanho;
     }
 
+    public ListaEncadeada[] getTabela() {
+        return tabela;
+    }
+
     public int getNumElementos() {
         int numElementos = 0;
         for (int i = 0; i < this.tamanho; i++) {
@@ -38,7 +42,7 @@ public class TabelaHash {
 
         // Verifica o fator de carga após a inserção
         double fatorDeCarga = (double) this.getNumElementos() / this.tamanho;
-        if (fatorDeCarga >= 0.75) {
+        if (fatorDeCarga > 0.75) {
             // Se o fator de carga é maior ou igual a 0.75 faz o rehashing
             rehash();
         }

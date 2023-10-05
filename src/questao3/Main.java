@@ -15,7 +15,7 @@ public class Main {
         int tamanhoInicial = contarLinhas(caminho);
         TabelaHash tabelaHash = new TabelaHash(tamanhoInicial);
 
-        try ( BufferedReader br = new BufferedReader(new FileReader(caminho))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
             String linha = br.readLine();
             while (linha != null) {
                 String[] token = linha.split(";");
@@ -33,11 +33,10 @@ public class Main {
         } catch (IOException ex) {
             Logger.getLogger(questao3.Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         caminho = "./src/entrada/exec.txt";
 
-        try ( BufferedReader br = new BufferedReader(new FileReader(caminho))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
             String linha;
             String[] token;
             linha = br.readLine();
@@ -47,7 +46,9 @@ public class Main {
                     case "inserir":
                         String[] token2 = linha.split(";");
                         int idCliente = Integer.valueOf(token[1]);
-                        String nome, email, cidade;
+                        String nome,
+                         email,
+                         cidade;
                         int id = Integer.valueOf(token[1]);
                         nome = token[2];
                         email = token[3];
@@ -62,9 +63,8 @@ public class Main {
                         tabelaHash.imprimir();
                         break;
                     case "buscar":
-                        Cliente c2 = new Cliente();
-                        c2 = (Cliente) tabelaHash.buscar(Integer.valueOf(token[1]));
-                        System.out.println(c2.toString());
+                        System.out.println(tabelaHash.buscar(Integer.valueOf(token[1])));
+                     
                         break;
                 }
                 linha = br.readLine();
@@ -73,12 +73,11 @@ public class Main {
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        tabelaHash.imprimir();
     }
 
     public static int contarLinhas(String caminhoArquivo) {
         int cont = 0;
-        try ( BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
             String linhaCompleta = br.readLine();
             while (linhaCompleta != null) {
                 linhaCompleta = br.readLine();
