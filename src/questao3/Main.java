@@ -19,7 +19,7 @@ public class Main {
             String linha = br.readLine();
             while (linha != null) {
                 String[] token = linha.split(";");
-                int id = Integer.valueOf(token[0]);
+                int id = Integer.parseInt(token[0]);
                 String nome, email, cidade;
                 nome = token[1];
                 email = token[2];
@@ -45,11 +45,11 @@ public class Main {
                 switch (token[0]) {
                     case "inserir":
                         String[] token2 = linha.split(";");
-                        int idCliente = Integer.valueOf(token[1]);
+                        int idCliente = Integer.parseInt(token[1]);
                         String nome,
                          email,
                          cidade;
-                        int id = Integer.valueOf(token[1]);
+                        int id = Integer.parseInt(token[1]);
                         nome = token[2];
                         email = token[3];
                         cidade = token[4];
@@ -57,13 +57,13 @@ public class Main {
                         tabelaHash.inserir(id, c);
                         break;
                     case "remover":
-                        tabelaHash.remover(Integer.valueOf(token[1]));
+                        tabelaHash.remover(Integer.parseInt(token[1]));
                         break;
                     case "imprimir":
                         tabelaHash.imprimir();
                         break;
                     case "buscar":
-                        System.out.println(tabelaHash.buscar(Integer.valueOf(token[1])));
+                        System.out.println("Encontrado:"+tabelaHash.buscar(Integer.parseInt(token[1])));
                      
                         break;
                 }

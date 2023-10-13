@@ -54,7 +54,7 @@ public class ListaEncadeada {
             return;
         }
         while (auxNodo != null) {
-            System.out.print(auxNodo.getElemento() + " ");
+            System.out.print(auxNodo.getElemento() + "; ");
             auxNodo = (Nodo) auxNodo.getProximo();
             i++;
         }

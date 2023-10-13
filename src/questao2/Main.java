@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import util.ListaEncadeada;
 import util.TabelaHash;
 
 public class Main {

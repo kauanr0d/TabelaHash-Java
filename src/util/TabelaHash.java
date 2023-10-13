@@ -1,5 +1,6 @@
 package util;
 
+
 public class TabelaHash {
 
     private int tamanho;
@@ -125,6 +126,8 @@ public class TabelaHash {
             System.out.print(i + ": ");
             if (this.tabela[i] != null) {
                 this.tabela[i].imprimir();
+            }else{
+                System.out.println("Null");
             }
             System.out.println("");
         }
@@ -132,7 +135,7 @@ public class TabelaHash {
 
     public void remover(int chave) {
         int posicaoAcesso = hash(chave, this.tamanho);
-        if (this.tabela[posicaoAcesso].getTamanho() > 0 && this.tabela[posicaoAcesso] != null) {
+        if (this.tabela[posicaoAcesso] != null && this.tabela[posicaoAcesso].getTamanho() > 0) {
             this.tabela[posicaoAcesso].removerObjeto(chave);
         }
     }
